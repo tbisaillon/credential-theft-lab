@@ -67,15 +67,13 @@
     <a class="current" href="./">Credential Phishing Prevention</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#configuration-steps">Configuration Steps</a></li>
+    <li class="toctree-l2"><a href="#phishing-campaign-configuration">Phishing Campaign Configuration</a></li>
     
-        <ul>
-        
-            <li><a class="toctree-l3" href="#firewall-configuration">Firewall Configuration</a></li>
-        
-            <li><a class="toctree-l3" href="#verification">Verification</a></li>
-        
-        </ul>
+
+    <li class="toctree-l2"><a href="#firewall-configuration">Firewall Configuration</a></li>
+    
+
+    <li class="toctree-l2"><a href="#verification">Verification</a></li>
     
 
     </ul>
@@ -126,7 +124,29 @@ to detect users when they submit credentials to web pages.</p>
 <p>In this lab, you will configure the firewall to check submitted credentials via the <strong>Domain 
 Credential Filter</strong> method.</p>
 <hr />
-<h2 id="configuration-steps">Configuration Steps</h2>
+<h1>Configuration Steps</h1>
+
+<h3 id="phishing-campaign-configuration">Phishing Campaign Configuration</h3>
+<p>From your laptop, open the GlobalProtect Agent.  If you don't have it installed, install it when 
+prompted by the portal.  Connect to your lab environment's GlobalProtect portal using any of the 
+user accounts listed in Table 2.</p>
+<p>Access your phishing campaign admin site with the credentials <strong>admin/gophish</strong>.</p>
+<p><img alt="Phishing Campaign 1" src="../img/phishing_campaign_1.png" /></p>
+<p>In the <strong>Users &amp; Groups</strong> tab, edit the <strong>Phishing Recipients</strong> </p>
+<p><img alt="Phishing Campaign 2" src="../img/phishing_campaign_2.png" /></p>
+<p>Change the recipient to be your test email account.</p>
+<p><img alt="Phishing Campaign 3" src="../img/phishing_campaign_3.png" /></p>
+<p>Now, in the <strong>Campaigns</strong> tab, click the <strong>New Campaign</strong> button.</p>
+<p><img alt="Phishing Campaign 4" src="../img/phishing_campaign_4.png" /></p>
+<p>Fill out the campaign as shown, then click <strong>Launch Campaign</strong>.  Pay particular attention to the 
+misspelled domain name <strong>paloaito.sso.com</strong> that we are spoofing!</p>
+<p><img alt="Phishing Campaign 5" src="../img/phishing_campaign_5.png" /></p>
+<p>GoPhish will queue and send the emails.  You can refresh this page and check that an email has been
+sent to your test user.</p>
+<p><img alt="Phishing Campaign 6" src="../img/phishing_campaign_6.png" /></p>
+<p>If you want, log into your test email account, and verify that you've received your phishing email.</p>
+<p><img alt="Phishing Campaign 7" src="../img/phishing_campaign_7.png" /></p>
+<hr />
 <h3 id="firewall-configuration">Firewall Configuration</h3>
 <p>Log in to the GUI of your firewall, and a User-ID agent.</p>
 <ul>
@@ -164,10 +184,8 @@ filtering profile to the security policy with traffic from the GP zone to the PH
 <li><strong>URL Profile:</strong> credential-phish-block</li>
 </ul>
 <p>Commit the configuration.</p>
+<hr />
 <h3 id="verification">Verification</h3>
-<p>From your laptop, open the GlobalProtect Agent.  If you don't have it installed, install it when 
-prompted by the portal.  Connect to your lab environment's GlobalProtect portal using any of the 
-user accounts listed in Table 2.</p>
 <p>Log into your test email account.  You should see that a phishing email has been received.  The
 email contains a link that will open a phishing webpage mimicking the Palo Alto Networks corporate
 SSO page.</p>
