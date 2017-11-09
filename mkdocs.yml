@@ -1,0 +1,7 @@
+site_name: Credential Theft Lab
+pages:
+  - Overview: 'index.md'
+  - Getting Started: 'gettingstarted.md'
+  - What's Been Done For You: 'priorconfiguration.md'
+  - Credential Phishing Prevention: 'credentialphishing.md'
+theme: readthedocs
