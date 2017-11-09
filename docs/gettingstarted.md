@@ -7,9 +7,15 @@ will be used for the initial login to EC2 instances.  If you've already got an
 SSH key pair that you would like to use in your desired region, feel free to 
 skip this step.
 
+![Key Pairs](img/key_pairs.png)
+
 In the EC2 section of the AWS console, click **Key Pairs**.
 
+![Create Key Pair 1](img/create_key_pair_1.png)
+
 Click **Create Key Pair**, give your key pair a name, and click **Create**.
+
+![Create Key Pair 2](img/create_key_pair_2.png)
 
 A SSH public/private key pair will be created for you, and the private key 
 will be downloaded by the browser.  This key pair will be used to log into the firewall instance.  
@@ -25,7 +31,9 @@ CloudFormation will ask for a stack name.  You can call it whatever you want, bu
 guide assumes that it will be **Credential-Theft-Lab**.  Everything created by the template will 
 use the stack name as a prefix so you can easily identify them.
 
-The two parameters for the stack are BootstrapBucketName and KeyName.  The bootstrap bucket 
+![Stack Details](img/stack_details.png)
+
+The two parameters for the stack are **BootstrapBucketName** and **KeyName**.  The bootstrap bucket 
 contains the initial configuration for the firewall (located ``here`` for reference), and the 
 KeyName dropdown should be used to select the SSH key pair you want to log into the firewall 
 initially.
@@ -40,6 +48,10 @@ the firewall and the GlobalProtect portal to access the rest of the environment.
 The created management security group for the firewall does not allow inbound access by default.  
 In the AWS console, add HTTPS and SSH access from your IP to the 
 **Credential-Theft-Lab-FirewallManagementSecurityGroup**.
+
+![Security Group 1](img/security_group_1.png)
+
+![Security Group 2](img/security_group_2.png)
 
 The **Credential-Theft-Lab-PublicSecurityGroup**, which is associated to the firewall's untrust 
 interface is wide open and should need no modifications.
@@ -58,11 +70,15 @@ the admin user and set the admin password.
 The bootstrap configuration for the firewall contains a certificate authority for you, but you need 
 to create a certificate for the IP address of the firewall's untrust interface.
 
+![Replace Cert 1](img/generate_cert_1.png)
+
 Use it in place of **Placeholder-Cert** in the **GlobalProtect_SSL** service profile.
+
+![Replace Cert 2](img/generate_cert_2.png)
 
 ## Download/Activate GlobalProtect Client
 
-If needed, download and activate a recent version of the GlobalProtect client.
+If you don't have GlobalProtect installed on your laptop, download and activate a recent version of it on your firewall.
 
 ## Create Phishing Victim Account
 
