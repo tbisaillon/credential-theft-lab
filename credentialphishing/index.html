@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Credential Phishing Prevention - Credential Theft Lab</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Credential Phishing Prevention";
+    var mkdocs_page_input_path = "credentialphishing.md";
+    var mkdocs_page_url = "/credentialphishing/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Credential Theft Lab</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../gettingstarted/">Getting Started</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../priorconfiguration/">What's Been Done For You</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Credential Phishing Prevention</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#configuration-steps">Configuration Steps</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#firewall-configuration">Firewall Configuration</a></li>
+        
+            <li><a class="toctree-l3" href="#verification">Verification</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Credential Theft Lab</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Credential Phishing Prevention</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1>Credential Phishing Prevention</h1>
+
+<p>There are 3 methods to check for corporate credential submissions that you can use on the firewall
+to detect users when they submit credentials to web pages.</p>
+<p>The three methods are:</p>
+<ol>
+<li>Group Mapping</li>
+<li>IP User Mapping</li>
+<li>Domain Credential Filter</li>
+</ol>
+<p>In this lab, you will configure the firewall to check submitted credentials via the <strong>Domain 
+Credential Filter</strong> method.</p>
+<hr />
+<h2 id="configuration-steps">Configuration Steps</h2>
+<h3 id="firewall-configuration">Firewall Configuration</h3>
+<p>Log in to the GUI of your firewall, and a User-ID agent.</p>
+<ul>
+<li><strong>Name:</strong> RODC</li>
+<li><strong>Host:</strong> 10.0.1.11</li>
+<li><strong>Port:</strong> 5007</li>
+<li>Make sure the <strong>Enabled</strong> check box is ticked.</li>
+</ul>
+<p><img alt="User-ID Agent" src="../img/uid_agent.png" /></p>
+<p><strong>Note:</strong> The service route configuration of the firewall has already been modified to communicate
+with the User-ID agent via the firewall's trust interface.  To confirm it has been set up correctly,
+under <strong>Device &gt; Setup &gt; Services</strong>, select <strong>Service Route Configuration</strong> and choose 
+<strong>Customize</strong>.  In the IPv4 tab, select UID Agent service and verify that it is the interface in 
+the <em>trust</em> zone (ethernet1/2).</p>
+<p>Commit your changes.  After the commit completes, go back to the User-ID Agents tab.  The connected
+column will change from orange to green.</p>
+<p>Create a custom URL category for legitimate sites for which you want to allow corporate credential
+submissions.  Select <strong>Objects &gt; Custom Objects &gt; URL Category</strong> and add a custom URL category.
+In this example, "login-palo" URL category is created to identify traffic to site 
+"login.paloaltonetworks.com".  Now, add "login-palo" as a custom URL category as shown below.</p>
+<p>Select <strong>Objects &gt; Security Profiles &gt; URL Filtering</strong> and select the default URL Filtering profile.
+Clone it, and change the cloned profile name to "credential-phish-block".  I that new profile, go
+to the <strong>User Credential Detection</strong> tab.  Choose <strong>Use Domain Credential Filter</strong> for the User 
+Credential Detection method, and set the log severity to "high".</p>
+<p>Use the Categories tab to set all URL categories to block credential submissions.</p>
+<p>For our custom URL category (login-palo), allow credential submissions.</p>
+<p>Go to the <strong>Policies &gt; Security</strong> tab, and create a new security policy.  Associate your new URL
+filtering profile to the security policy with traffic from the GP zone to the PHISH zone.</p>
+<ul>
+<li><strong>Policy Name:</strong> Allow to Intranet</li>
+<li><strong>Source Zone:</strong> GP</li>
+<li><strong>Destination Zone:</strong> PHISH, TRUST</li>
+<li><strong>Service:</strong> application-default</li>
+<li><strong>Action:</strong> allow</li>
+<li><strong>URL Profile:</strong> credential-phish-block</li>
+</ul>
+<p>Commit the configuration.</p>
+<h3 id="verification">Verification</h3>
+<p>From your laptop, open the GlobalProtect Agent.  If you don't have it installed, install it when 
+prompted by the portal.  Connect to your lab environment's GlobalProtect portal using any of the 
+user accounts listed in Table 2.</p>
+<p>Log into your test email account.  You should see that a phishing email has been received.  The
+email contains a link that will open a phishing webpage mimicking the Palo Alto Networks corporate
+SSO page.</p>
+<p>Upon clicking the link provided in the email, you will get a phishing page with a form to submit
+user credentials.</p>
+<p><strong>Note:</strong> If you are NOT connected via GlobalProtect to your lab environment, you will get an 
+"under construction" web page similar.  Do not proceed until you get the phishing page above.</p>
+<p>Enter a username <strong>not</strong> in Table 2, and any password you'd like.  Click <strong>Login</strong>.</p>
+<p>At this point, those credentials have been phished.  You will be redirected to a legitimate site.</p>
+<p>Now log in to your credential phishing campaign's admin web site.</p>
+<p>Next to the PANW campaign, click the View Results icon in the bottom right corner to get the 
+campaign details.  Scroll down to your username, click the triangle icon, and expand the details:</p>
+<p>Scroll down to the bottom "Submitted Data" section, and click the triangle icon next to "View 
+Details".  You will see the username and password you entered.</p>
+<p>The above steps you performed show how easy it is to steal user credentials.  Credential phishing
+is rampant.  It is easier than ever to phish a user for credentials.  This is especially true in
+targetted attacks, where the attacker wants to get into a specific organaization.  A phishing attack
+makes password complexity irrelevant; the attacker steals the password no matter how difficult it
+is.</p>
+<p>You will do a second test, but first, let's find out what usernames are defined on your firewall.
+Connect to your firewall via SSH, and run the <code>show user ip-user-mapping all</code> command.</p>
+<p>Confirm that your username is listed (it will be if you are connected to the lab environment via 
+GlobalProtect).  You may see additional IP/user mappings.</p>
+<p>Go back to your test phishing account, and open the phishing email.  By clicking the link provided
+in the email, you will get to the phishing page again.</p>
+<p>Try submitting true "corporate" credentials by submitting the credentials you are connected to 
+GlobalProtect with.</p>
+<p>Since the source IP address of a session had a known User-ID, and the HTTP POST parameter in that
+session matched the password belonging to that User-ID, the firewall detected a credential 
+submission and the URL will be blocked.</p>
+<p>You will get this message:</p>
+<p>You can see more info about this process using these commands:</p>
+<ul>
+<li><code>show user user-id-agent state all</code></li>
+<li><code>less mp-log useridd.log</code> - You can find detailed logs in useridd.log.  This log now includes 
+  credential related logs, as well as bloomfilter updates.</li>
+</ul>
+<p>In the output of <code>show user user-id-agent state all</code>, look for the following:</p>
+<p>Now examine the firewall's URL filtering logs.  Locate the log that matches your username, and view
+the log details.  Look for the "credential detected" flag.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../priorconfiguration/" class="btn btn-neutral" title="What's Been Done For You"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../priorconfiguration/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>
