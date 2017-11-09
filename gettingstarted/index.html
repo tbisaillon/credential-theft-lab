@@ -133,8 +133,11 @@
 will be used for the initial login to EC2 instances.  If you've already got an 
 SSH key pair that you would like to use in your desired region, feel free to 
 skip this step.</p>
+<p><img alt="Key Pairs" src="../img/key_pairs.png" /></p>
 <p>In the EC2 section of the AWS console, click <strong>Key Pairs</strong>.</p>
+<p><img alt="Create Key Pair 1" src="../img/create_key_pair_1.png" /></p>
 <p>Click <strong>Create Key Pair</strong>, give your key pair a name, and click <strong>Create</strong>.</p>
+<p><img alt="Create Key Pair 2" src="../img/create_key_pair_2.png" /></p>
 <p>A SSH public/private key pair will be created for you, and the private key 
 will be downloaded by the browser.  This key pair will be used to log into the firewall instance.  </p>
 <p>For more information, see the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html?icmpid=docs_ec2_console&gt;">EC2 Key Pair documentation</a>.</p>
@@ -144,7 +147,8 @@ the latest version of the template.</p>
 <p>CloudFormation will ask for a stack name.  You can call it whatever you want, but the rest of this 
 guide assumes that it will be <strong>Credential-Theft-Lab</strong>.  Everything created by the template will 
 use the stack name as a prefix so you can easily identify them.</p>
-<p>The two parameters for the stack are BootstrapBucketName and KeyName.  The bootstrap bucket 
+<p><img alt="Stack Details" src="../img/stack_details.png" /></p>
+<p>The two parameters for the stack are <strong>BootstrapBucketName</strong> and <strong>KeyName</strong>.  The bootstrap bucket 
 contains the initial configuration for the firewall (located <code>here</code> for reference), and the 
 KeyName dropdown should be used to select the SSH key pair you want to log into the firewall 
 initially.</p>
@@ -156,6 +160,8 @@ the firewall and the GlobalProtect portal to access the rest of the environment.
 <p>The created management security group for the firewall does not allow inbound access by default.<br />
 In the AWS console, add HTTPS and SSH access from your IP to the 
 <strong>Credential-Theft-Lab-FirewallManagementSecurityGroup</strong>.</p>
+<p><img alt="Security Group 1" src="../img/security_group_1.png" /></p>
+<p><img alt="Security Group 2" src="../img/security_group_2.png" /></p>
 <p>The <strong>Credential-Theft-Lab-PublicSecurityGroup</strong>, which is associated to the firewall's untrust 
 interface is wide open and should need no modifications.</p>
 <h2 id="log-in-to-firewall">Log In To Firewall</h2>
@@ -166,9 +172,11 @@ the admin user and set the admin password.</p>
 <h2 id="generate-globalprotect-gateway-certificate">Generate GlobalProtect Gateway Certificate</h2>
 <p>The bootstrap configuration for the firewall contains a certificate authority for you, but you need 
 to create a certificate for the IP address of the firewall's untrust interface.</p>
+<p><img alt="Replace Cert 1" src="../img/generate_cert_1.png" /></p>
 <p>Use it in place of <strong>Placeholder-Cert</strong> in the <strong>GlobalProtect_SSL</strong> service profile.</p>
+<p><img alt="Replace Cert 2" src="../img/generate_cert_2.png" /></p>
 <h2 id="downloadactivate-globalprotect-client">Download/Activate GlobalProtect Client</h2>
-<p>If needed, download and activate a recent version of the GlobalProtect client.</p>
+<p>If you don't have GlobalProtect installed on your laptop, download and activate a recent version of it on your firewall.</p>
 <h2 id="create-phishing-victim-account">Create Phishing Victim Account</h2>
 <p>We will be sending a phishing email as part of this lab.  You can either use your personal Gmail 
 account, or create a new one for this lab.</p>
