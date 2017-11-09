@@ -24,8 +24,11 @@ For more information, see the [EC2 Key Pair documentation](https://docs.aws.amaz
 
 ## CloudFormation
 
-In CloudFormation, create a new stack using the URL ``Raw GitHub URL``.  This will always point to 
-the latest version of the template.
+In CloudFormation, create a new stack using the following URL:
+
+``https://raw.githubusercontent.com/mrichardson03/credential-theft-lab/master/credential-theft-lab.json``
+
+This will always point to the latest version of the template.
 
 CloudFormation will ask for a stack name.  You can call it whatever you want, but the rest of this 
 guide assumes that it will be **Credential-Theft-Lab**.  Everything created by the template will 

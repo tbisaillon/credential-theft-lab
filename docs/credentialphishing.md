@@ -14,7 +14,45 @@ Credential Filter** method.
 
 ---
 
-## Configuration Steps
+<h1>Configuration Steps</h1>
+
+### Phishing Campaign Configuration
+
+From your laptop, open the GlobalProtect Agent.  If you don't have it installed, install it when 
+prompted by the portal.  Connect to your lab environment's GlobalProtect portal using any of the 
+user accounts listed in Table 2.
+
+Access your phishing campaign admin site with the credentials **admin/gophish**.
+
+![Phishing Campaign 1](img/phishing_campaign_1.png)
+
+In the **Users & Groups** tab, edit the **Phishing Recipients** 
+
+![Phishing Campaign 2](img/phishing_campaign_2.png)
+
+Change the recipient to be your test email account.
+
+![Phishing Campaign 3](img/phishing_campaign_3.png)
+
+Now, in the **Campaigns** tab, click the **New Campaign** button.
+
+![Phishing Campaign 4](img/phishing_campaign_4.png)
+
+Fill out the campaign as shown, then click **Launch Campaign**.  Pay particular attention to the 
+misspelled domain name **paloaito.sso.com** that we are spoofing!
+
+![Phishing Campaign 5](img/phishing_campaign_5.png)
+
+GoPhish will queue and send the emails.  You can refresh this page and check that an email has been
+sent to your test user.
+
+![Phishing Campaign 6](img/phishing_campaign_6.png)
+
+If you want, log into your test email account, and verify that you've received your phishing email.
+
+![Phishing Campaign 7](img/phishing_campaign_7.png)
+
+---
 
 ### Firewall Configuration
 
@@ -62,11 +100,9 @@ filtering profile to the security policy with traffic from the GP zone to the PH
 
 Commit the configuration.
 
-### Verification
+---
 
-From your laptop, open the GlobalProtect Agent.  If you don't have it installed, install it when 
-prompted by the portal.  Connect to your lab environment's GlobalProtect portal using any of the 
-user accounts listed in Table 2.
+### Verification
 
 Log into your test email account.  You should see that a phishing email has been received.  The
 email contains a link that will open a phishing webpage mimicking the Palo Alto Networks corporate
