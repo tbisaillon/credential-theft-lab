@@ -64,10 +64,6 @@ interface is wide open and should need no modifications.
 After giving the firewall instance around 5-6 minutes to initialize, use your SSH key to log in as 
 the admin user and set the admin password.
 
-## License the VM-Series
-
-*Should we be doing this, or should we be using the Bundle 2 on demand license?*
-
 ## Generate GlobalProtect Gateway Certificate
 
 The bootstrap configuration for the firewall contains a certificate authority for you, but you need 
