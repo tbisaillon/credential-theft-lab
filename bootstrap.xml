@@ -692,6 +692,7 @@ y5a3ZOYYk5PxAw85k4lsANu/WevaX+yDB3lSkhs=
                     <member>untrust</member>
                   </to>
                   <from>
+                    <member>gp</member>
                     <member>phish</member>
                     <member>trust</member>
                   </from>
@@ -746,6 +747,7 @@ y5a3ZOYYk5PxAw85k4lsANu/WevaX+yDB3lSkhs=
                     <member>untrust</member>
                   </to>
                   <from>
+                    <member>gp</member>
                     <member>phish</member>
                     <member>trust</member>
                   </from>
@@ -820,7 +822,7 @@ y5a3ZOYYk5PxAw85k4lsANu/WevaX+yDB3lSkhs=
                           <list>
                             <entry name="Credential-Theft-Lab-FW">
                               <ip>
-                                <ipv4>54.243.11.95</ipv4>
+                                <ipv4>1.1.1.1</ipv4>
                               </ip>
                               <priority-rule>
                                 <entry name="Any">
