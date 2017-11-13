@@ -61,7 +61,7 @@ interface is wide open and should need no modifications.
 
 ## Log In To Firewall
 
-After giving the firewall instance around 5-6 minutes to initialize and bootstrap, use your SSH key 
+After giving the firewall instance around 5-10 minutes to initialize and bootstrap, use your SSH key 
 to log in as the admin user and set the admin password.
 
 ## Generate GlobalProtect Portal Certificate
