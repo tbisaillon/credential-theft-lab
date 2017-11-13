@@ -3,7 +3,7 @@
   <mgt-config>
     <users>
       <entry name="admin">
-        <phash>$1$xsqvpltx$TsuEXCI.NV0a8ausA4Wnw.</phash>
+        <phash>$1$tdexplug$Rs.hsbIbribSrkSVa17wb0</phash>
         <permissions>
           <role-based>
             <superuser>yes</superuser>
@@ -142,6 +142,114 @@ y5a3ZOYYk5PxAw85k4lsANu/WevaX+yDB3lSkhs=
         <algorithm>RSA</algorithm>
         <private-key>-AQ==E0/nVRwE769gM78yyLNfqebGt3E=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</private-key>
       </entry>
+      <entry name="Duo-Root">
+        <subject-hash>81b9768f</subject-hash>
+        <issuer-hash>81b9768f</issuer-hash>
+        <not-valid-before>Nov 10 00:00:00 2006 GMT</not-valid-before>
+        <issuer>/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert High Assurance EV Root CA</issuer>
+        <not-valid-after>Nov 10 00:00:00 2031 GMT</not-valid-after>
+        <common-name>DigiCert High Assurance EV Root CA</common-name>
+        <expiry-epoch>1952035200</expiry-epoch>
+        <ca>yes</ca>
+        <subject>/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert High Assurance EV Root CA</subject>
+        <public-key>-----BEGIN CERTIFICATE-----
+MIIDxTCCAq2gAwIBAgIQAqxcJmoLQJuPC3nyrkYldzANBgkqhkiG9w0BAQUFADBs
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
+d3cuZGlnaWNlcnQuY29tMSswKQYDVQQDEyJEaWdpQ2VydCBIaWdoIEFzc3VyYW5j
+ZSBFViBSb290IENBMB4XDTA2MTExMDAwMDAwMFoXDTMxMTExMDAwMDAwMFowbDEL
+MAkGA1UEBhMCVVMxFTATBgNVBAoTDERpZ2lDZXJ0IEluYzEZMBcGA1UECxMQd3d3
+LmRpZ2ljZXJ0LmNvbTErMCkGA1UEAxMiRGlnaUNlcnQgSGlnaCBBc3N1cmFuY2Ug
+RVYgUm9vdCBDQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMbM5XPm
++9S75S0tMqbf5YE/yc0lSbZxKsPVlDRnogocsF9ppkCxxLeyj9CYpKlBWTrT3JTW
+PNt0OKRKzE0lgvdKpVMSOO7zSW1xkX5jtqumX8OkhPhPYlG++MXs2ziS4wblCJEM
+xChBVfvLWokVfnHoNb9Ncgk9vjo4UFt3MRuNs8ckRZqnrG0AFFoEt7oT61EKmEFB
+Ik5lYYeBQVCmeVyJ3hlKV9Uu5l0cUyx+mM0aBhakaHPQNAQTXKFx01p8VdteZOE3
+hzBWBOURtCmAEvF5OYiiAhF8J2a3iLd48soKqDirCmTCv2ZdlYTBoSUeh10aUAsg
+EsxBu24LUTi4S8sCAwEAAaNjMGEwDgYDVR0PAQH/BAQDAgGGMA8GA1UdEwEB/wQF
+MAMBAf8wHQYDVR0OBBYEFLE+w2kD+L9HAdSYJhoIAu9jZCvDMB8GA1UdIwQYMBaA
+FLE+w2kD+L9HAdSYJhoIAu9jZCvDMA0GCSqGSIb3DQEBBQUAA4IBAQAcGgaX3Nec
+nzyIZgYIVyHbIUf4KmeqvxgydkAQV8GK83rZEWWONfqe/EW1ntlMMUu4kehDLI6z
+eM7b41N5cdblIZQB2lWHmiRk9opmzN6cN82oNLFpmyPInngiK3BD41VHMWEZ71jF
+hS9OMPagMRYjyOfiZRYzy78aG6A9+MpeizGLYAiJLQwGXFK3xPkKmNEVX58Svnw2
+Yzi9RKR/5CYrCsSXaQ3pjOLAEFe4yHYSkVXySGnYvCoCWw9E1CAx2/S6cCZdkGCe
+vEsXCS+0yx5DaMkHJ8HSXPfqIbloEpw8nL+e/IBcm2PN7EeqJSdnoDfzAIJ9VNep
++OkuE6N36B9K
+-----END CERTIFICATE-----
+</public-key>
+        <algorithm>RSA</algorithm>
+      </entry>
+      <entry name="Duo-Intermediate">
+        <subject-hash>58754cf2</subject-hash>
+        <issuer-hash>81b9768f</issuer-hash>
+        <not-valid-before>Oct 22 12:00:00 2013 GMT</not-valid-before>
+        <issuer>/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert High Assurance EV Root CA</issuer>
+        <not-valid-after>Oct 22 12:00:00 2028 GMT</not-valid-after>
+        <common-name>DigiCert SHA2 High Assurance Server CA</common-name>
+        <expiry-epoch>1855828800</expiry-epoch>
+        <ca>yes</ca>
+        <subject>/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert SHA2 High Assurance Server CA</subject>
+        <public-key>-----BEGIN CERTIFICATE-----
+MIIEsTCCA5mgAwIBAgIQBOHnpNxc8vNtwCtCuF0VnzANBgkqhkiG9w0BAQsFADBs
+MQswCQYDVQQGEwJVUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYDVQQLExB3
+d3cuZGlnaWNlcnQuY29tMSswKQYDVQQDEyJEaWdpQ2VydCBIaWdoIEFzc3VyYW5j
+ZSBFViBSb290IENBMB4XDTEzMTAyMjEyMDAwMFoXDTI4MTAyMjEyMDAwMFowcDEL
+MAkGA1UEBhMCVVMxFTATBgNVBAoTDERpZ2lDZXJ0IEluYzEZMBcGA1UECxMQd3d3
+LmRpZ2ljZXJ0LmNvbTEvMC0GA1UEAxMmRGlnaUNlcnQgU0hBMiBIaWdoIEFzc3Vy
+YW5jZSBTZXJ2ZXIgQ0EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC2
+4C/CJAbIbQRf1+8KZAayfSImZRauQkCbztyfn3YHPsMwVYcZuU+UDlqUH1VWtMIC
+Kq/QmO4LQNfE0DtyyBSe75CxEamu0si4QzrZCwvV1ZX1QK/IHe1NnF9Xt4ZQaJn1
+itrSxwUfqJfJ3KSxgoQtxq2lnMcZgqaFD15EWCo3j/018QsIJzJa9buLnqS9UdAn
+4t07QjOjBSjEuyjMmqwrIw14xnvmXnG3Sj4I+4G3FhahnSMSTeXXkgisdaScus0X
+sh5ENWV/UyU50RwKmmMbGZJ0aAo3wsJSSMs5WqK24V3B3aAguCGikyZvFEohQcft
+bZvySC/zA/WiaJJTL17jAgMBAAGjggFJMIIBRTASBgNVHRMBAf8ECDAGAQH/AgEA
+MA4GA1UdDwEB/wQEAwIBhjAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIw
+NAYIKwYBBQUHAQEEKDAmMCQGCCsGAQUFBzABhhhodHRwOi8vb2NzcC5kaWdpY2Vy
+dC5jb20wSwYDVR0fBEQwQjBAoD6gPIY6aHR0cDovL2NybDQuZGlnaWNlcnQuY29t
+L0RpZ2lDZXJ0SGlnaEFzc3VyYW5jZUVWUm9vdENBLmNybDA9BgNVHSAENjA0MDIG
+BFUdIAAwKjAoBggrBgEFBQcCARYcaHR0cHM6Ly93d3cuZGlnaWNlcnQuY29tL0NQ
+UzAdBgNVHQ4EFgQUUWj/kK8CB3U8zNllZGKiErhZcjswHwYDVR0jBBgwFoAUsT7D
+aQP4v0cB1JgmGggC72NkK8MwDQYJKoZIhvcNAQELBQADggEBABiKlYkD5m3fXPwd
+aOpKj4PWUS+Na0QWnqxj9dJubISZi6qBcYRb7TROsLd5kinMLYBq8I4g4Xmk/gNH
+E+r1hspZcX30BJZr01lYPf7TMSVcGDiEo+afgv2MW5gxTs14nhr9hctJqvIni5ly
+/D6q1UEL2tU2ob8cbkdJf17ZSHwD2f2LSaCYJkJA69aSEaRkCldUxPUd1gJea6zu
+xICaEnL6VpPX/78whQYwvwt/Tv9XBZ0k7YXDK/umdaisLRbvfXknsuvCnQsH6qqF
+0wGjIChBWUMo0oHjqvbsezt3tkBigAVBRQHvFwY+3sAzm2fTYS5yh+Rp/BIAV0Ae
+cPUeybQ=
+-----END CERTIFICATE-----
+</public-key>
+        <algorithm>RSA</algorithm>
+      </entry>
+      <entry name="CP-MFA">
+        <subject-hash>e67f8abc</subject-hash>
+        <issuer-hash>e67f8abc</issuer-hash>
+        <not-valid-before>Nov 13 19:43:56 2017 GMT</not-valid-before>
+        <issuer>/CN=172.16.10.1</issuer>
+        <not-valid-after>Nov 13 19:43:56 2018 GMT</not-valid-after>
+        <common-name>172.16.10.1</common-name>
+        <expiry-epoch>1542138236</expiry-epoch>
+        <ca>yes</ca>
+        <subject>/CN=172.16.10.1</subject>
+        <public-key>-----BEGIN CERTIFICATE-----
+MIICzDCCAbSgAwIBAgIJAOjGYihKS9MtMA0GCSqGSIb3DQEBCwUAMBYxFDASBgNV
+BAMTCzE3Mi4xNi4xMC4xMB4XDTE3MTExMzE5NDM1NloXDTE4MTExMzE5NDM1Nlow
+FjEUMBIGA1UEAxMLMTcyLjE2LjEwLjEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAw
+ggEKAoIBAQDbA5eRkiSNB9pZAn3CM+N3QzHV6zrj3tMcFGvVD72EjDt+GMj80SF4
+oEGG3rExLtrYyPXukoTmHW1vD542GZPKhiIUY2f4HojRIl1qm13SPQE5T8Sm9BGY
+pxawDbqQI+r9s8BpjxGF/Y4DTVsvm2R92HbQvo7sEwMOh2rkxfq2xezNV6A1+5wY
+EIMIUwZfrS5g5tbzbrhFep9V4RCRmKv/FsG9Yne2uaxbua62HUg04Ld1Z3RRSiRO
+e6wxHrgqC2oHGdAbkNHUDCzvIGugzOyOcQOrVWOeDN8qg0H3zIb8+dEk+1GGw3cK
+lOha4SP07odrSbcZnKhwAmqx/eyAdazXAgMBAAGjHTAbMAwGA1UdEwQFMAMBAf8w
+CwYDVR0PBAQDAgIEMA0GCSqGSIb3DQEBCwUAA4IBAQAUfinyu+AZ9B9qHI9JELU+
+eKgw2N1g7i0zWli0vb+hXPvGfKML1SFMZ4BZVq4m+t4PBTx83TlRnnfsBta05Kxj
+1/d/i/emx5OJHSwr0yOtIsxdT0o3S2Ri13VOA2ToExD9Y3sZ1x7kIYYL/Yr1waVo
+c3bFrk41aXlwQc1a7bVa9Qu8byoNY9wykFGogDLwf1uwRnjnkchb31C0qcISYBHW
+DUnUvKKvde9ANACCgq34T8TelRVi9E6TKDrZp5aL25u8TAoYq50VjD6g0NXamHh5
+XoX7yJAsl9fVxBI7vwdTgqDm0hPbIcdu18I7Ck8b7Z8/vgX2RzVFEjqWMKf7pe6O
+-----END CERTIFICATE-----
+</public-key>
+        <algorithm>RSA</algorithm>
+        <private-key>-AQ==VCOHVlL/rTLNIY0B3BFwqBYn+JU=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</private-key>
+      </entry>
     </certificate>
     <ssl-tls-service-profile>
       <entry name="GlobalProtect_SSL">
@@ -150,6 +258,13 @@ y5a3ZOYYk5PxAw85k4lsANu/WevaX+yDB3lSkhs=
           <max-version>max</max-version>
         </protocol-settings>
         <certificate>Placeholder-Cert</certificate>
+      </entry>
+      <entry name="CP_MFA_SSL">
+        <protocol-settings>
+          <min-version>tls1-0</min-version>
+          <max-version>max</max-version>
+        </protocol-settings>
+        <certificate>CP-MFA</certificate>
       </entry>
     </ssl-tls-service-profile>
     <server-profile>
@@ -196,6 +311,14 @@ y5a3ZOYYk5PxAw85k4lsANu/WevaX+yDB3lSkhs=
         <member>GlobalProtect-CA</member>
       </trusted-root-CA>
     </ssl-decrypt>
+    <certificate-profile>
+      <entry name="Duo-Cert-Profile">
+        <CA>
+          <entry name="Duo-Root"/>
+          <entry name="Duo-Intermediate"/>
+        </CA>
+      </entry>
+    </certificate-profile>
   </shared>
   <devices>
     <entry name="localhost.localdomain">
@@ -512,9 +635,9 @@ y5a3ZOYYk5PxAw85k4lsANu/WevaX+yDB3lSkhs=
           <type>
             <dhcp-client>
               <send-hostname>yes</send-hostname>
-              <send-client-id>no</send-client-id>
-              <accept-dhcp-hostname>no</accept-dhcp-hostname>
-              <accept-dhcp-domain>no</accept-dhcp-domain>
+              <send-client-id>yes</send-client-id>
+              <accept-dhcp-hostname>yes</accept-dhcp-hostname>
+              <accept-dhcp-domain>yes</accept-dhcp-domain>
             </dhcp-client>
           </type>
           <update-server>updates.paloaltonetworks.com</update-server>
@@ -594,15 +717,16 @@ y5a3ZOYYk5PxAw85k4lsANu/WevaX+yDB3lSkhs=
           <management>
             <hostname-type-in-syslog>FQDN</hostname-type-in-syslog>
             <initcfg>
+              <public-key>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFDVURmN0pjVVhidUpDQTJwcnVSOWQ5M3BHSTR3YkgwMmxnVi9NdjhmTnZya1hjcDh2NHVneWkvZ0RoM1FCNnVhdE9veWJSWE01NXdnZ1VIY2l5Rm0xZytoMXFEeWhSMDU3SkkwNVBMb0FqY1o3NnA0bnNjV3NsUWZmRUVobFFIQ3dRazRyYzVjNXRvUkpCUmZvYldrenR2d2cxNDRCWmQyOFhlR3RKZkJIakNsVjVCUUIwUStJeC9qSUVza0crU1R1YjJKZkJFUkRnVE9UY2RFRnEvT1RRQWJWV29PV0xhZGd0MUZzbUlYbkRlZzFXR0xZV0p2OTh3Sk5BMzJxcVZ1K3V0UGJ1RnhHYi9zdzlmR2k1Y3ArNGRrdVZQMDVSZElGRTIvY1VqdkhzdVo2dUdBNk9SVDh1a1p0WFV5Y1plTXNkNnVyU2l3elpRR1hobjNTa05RN0IgbWlyaWNoYXJkc29uLWltYWMtYXdzCg==</public-key>
               <type>
                 <dhcp-client>
                   <send-hostname>yes</send-hostname>
-                  <send-client-id>no</send-client-id>
-                  <accept-dhcp-hostname>no</accept-dhcp-hostname>
-                  <accept-dhcp-domain>no</accept-dhcp-domain>
+                  <send-client-id>yes</send-client-id>
+                  <accept-dhcp-hostname>yes</accept-dhcp-hostname>
+                  <accept-dhcp-domain>yes</accept-dhcp-domain>
                 </dhcp-client>
               </type>
-              <public-key>c3NoLXJzYSBBQUFBQjNOemFDMXljMkVBQUFBREFRQUJBQUFCQVFDVURmN0pjVVhidUpDQTJwcnVSOWQ5M3BHSTR3YkgwMmxnVi9NdjhmTnZya1hjcDh2NHVneWkvZ0RoM1FCNnVhdE9veWJSWE01NXdnZ1VIY2l5Rm0xZytoMXFEeWhSMDU3SkkwNVBMb0FqY1o3NnA0bnNjV3NsUWZmRUVobFFIQ3dRazRyYzVjNXRvUkpCUmZvYldrenR2d2cxNDRCWmQyOFhlR3RKZkJIakNsVjVCUUIwUStJeC9qSUVza0crU1R1YjJKZkJFUkRnVE9UY2RFRnEvT1RRQWJWV29PV0xhZGd0MUZzbUlYbkRlZzFXR0xZV0p2OTh3Sk5BMzJxcVZ1K3V0UGJ1RnhHYi9zdzlmR2k1Y3ArNGRrdVZQMDVSZElGRTIvY1VqdkhzdVo2dUdBNk9SVDh1a1p0WFV5Y1plTXNkNnVyU2l3elpRR1hobjNTa05RN0IgbWlyaWNoYXJkc29uLWltYWMtYXdzCg==</public-key>
+              <hostname>Credential-Theft-Lab-FW</hostname>
             </initcfg>
           </management>
         </setting>
