@@ -61,10 +61,10 @@ interface is wide open and should need no modifications.
 
 ## Log In To Firewall
 
-After giving the firewall instance around 5-6 minutes to initialize, use your SSH key to log in as 
-the admin user and set the admin password.
+After giving the firewall instance around 5-6 minutes to initialize and bootstrap, use your SSH key 
+to log in as the admin user and set the admin password.
 
-## Generate GlobalProtect Gateway Certificate
+## Generate GlobalProtect Portal Certificate
 
 The bootstrap configuration for the firewall contains a certificate authority for you, but you need 
 to create a certificate for the IP address of the firewall's untrust interface.
@@ -75,9 +75,17 @@ Use it in place of **Placeholder-Cert** in the **GlobalProtect_SSL** service pro
 
 ![Replace Cert 2](img/generate_cert_2.png)
 
+## Replace External Gateway in GlobalProtect Portal Config
+
+In the Agent config section of the GlobalProtect portal configuration, navigate to the **External**
+tab, and replace the external gateway IP address with your firewall's untrust interface.
+
+![External Gateway](img/external_gateway.png)
+
 ## Download/Activate GlobalProtect Client
 
-If you don't have GlobalProtect installed on your laptop, download and activate a recent version of it on your firewall.
+If you don't have GlobalProtect installed on your laptop, download and activate the latest version 
+on the firewall so you can download it when connecting to the GlobalProtect portal.
 
 ## Create Phishing Victim Account
 
