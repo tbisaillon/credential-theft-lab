@@ -56,7 +56,7 @@ If you want, log into your test email account, and verify that you've received y
 
 ### Firewall Configuration
 
-Log in to the GUI of your firewall, and a User-ID agent.
+Log in to the GUI of your firewall, and add a User-ID agent.
 
    - **Name:** RODC
    - **Host:** 10.0.1.11
