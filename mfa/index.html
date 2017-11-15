@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Multi-Factor Authentication - Credential Theft Lab</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Multi-Factor Authentication";
+    var mkdocs_page_input_path = "mfa.md";
+    var mkdocs_page_url = "/mfa/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Credential Theft Lab</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Overview</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../gettingstarted/">Getting Started</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../priorconfiguration/">What's Been Done For You</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../credentialphishing/">Credential Phishing Prevention</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Multi-Factor Authentication</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#duo-setup">Duo Setup</a></li>
+    
+
+    <li class="toctree-l2"><a href="#firewall-configuration">Firewall Configuration</a></li>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Credential Theft Lab</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Multi-Factor Authentication</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1>Multi-Factor Authentication</h1>
+
+<h3 id="duo-setup">Duo Setup</h3>
+<ul>
+<li>Create account</li>
+<li>Register device</li>
+<li>Set up application</li>
+</ul>
+<h3 id="firewall-configuration">Firewall Configuration</h3>
+<p>In the <strong>Device</strong> tab, add a Multi Factor Authentication server profile:</p>
+<ul>
+<li><strong>Profile Name</strong>: DUO_MFA</li>
+<li><strong>Certificate Profile</strong>: Duo-Cert-Profile (certificates have been imported for you already)</li>
+<li><strong>MFA Vendor</strong>: Duo v2</li>
+<li><strong>API Host</strong>, <strong>Integration Key</strong>, and <strong>Secret Key</strong> are specific to your Duo account.</li>
+</ul>
+<p><img alt="Multi Factor Server Profile" src="../img/mfa_server_profile.png" /></p>
+<p>Add a new <strong>Authentication Profile</strong> by cloning the existing LDAP_Auth profile.  Call it 
+<strong>LDAP_MFA</strong>, and add the <strong>DUO_MFA</strong> profile to it as an additional factor.</p>
+<p><img alt="Authentication Profile" src="../img/auth_profile.png" /></p>
+<p>Captive Portal is used to deliver the MFA prompt, so that needs to be configured next.  There
+should be a self-signed certificate for the portal already created (CP-MFA), as well as a SSL/TLS
+profile (CP_MFA_SSL) for you to use.</p>
+<p>Configure Captive Portal for the GP tunnel interface as shown:</p>
+<p><img alt="Captive Portal" src="../img/captive_portal.png" /></p>
+<p>We want GlobalProtect to prompt us to authenticate for applications that aren't web based, so we
+need to add those settings.  In the Agent config section of the GlobalProtect portal configuration,
+click on the <strong>App</strong> tab and include the following settings:</p>
+<ul>
+<li><strong>Enable Inbound Authentication Prompts from MFA Gateways</strong>: Yes</li>
+<li><strong>Network Port for Inbound Authentication Prompts (UDP)</strong>: 4501</li>
+<li><strong>Trusted MFA Gateways</strong>: 172.16.10.1</li>
+</ul>
+<p><img alt="GP MFA" src="../img/gp_mfa.png" /></p>
+<p>In <strong>Objects &gt; Authentication</strong>, create a new authentication object using the authentication 
+profile.</p>
+<p><img alt="Authentication" src="../img/authentication.png" /></p>
+<p>In the <strong>Authentication</strong> policy, create a rule to trigger the challenge for traffic destined for
+our web server.  You may want to set the timeout to a smaller value to make testing easier.</p>
+<ul>
+<li><strong>Policy Name:</strong> Require MFA</li>
+<li><strong>Source Zone:</strong> GP</li>
+<li><strong>Destination Zone:</strong> TRUST</li>
+<li><strong>Destination Address:</strong> 10.0.1.12</li>
+<li><strong>Service:</strong> service-http, service-rdp</li>
+<li><strong>Authentication Enforcement:</strong> Duo-Authentication</li>
+</ul>
+<p>Finally, create a <strong>Security</strong> policy allowing traffic to the web server.</p>
+<ul>
+<li><strong>Policy Name:</strong> Lab MFA Test</li>
+<li><strong>Source Zone:</strong> GP</li>
+<li><strong>Destination Zone:</strong> TRUST</li>
+<li><strong>Destination Address:</strong> 10.0.1.12</li>
+<li><strong>Application:</strong> web-browsing, ms-rdp</li>
+<li><strong>Service:</strong> application-default</li>
+<li><strong>Action:</strong> allow</li>
+</ul>
+<p>Commit the configuration.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../credentialphishing/" class="btn btn-neutral" title="Credential Phishing Prevention"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../credentialphishing/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>
