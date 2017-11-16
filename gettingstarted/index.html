@@ -158,6 +158,9 @@ use the stack name as a prefix so you can easily identify them.</p>
 contains the initial configuration for the firewall (located <code>here</code> for reference), and the 
 KeyName dropdown should be used to select the SSH key pair you want to log into the firewall 
 initially.</p>
+<p><img alt="Create Stack" src="../img/create_stack.png" /></p>
+<p>Be sure to check the box "I acknowledge that AWS CloudFormation might create IAM resources" when 
+creating the stack to create the bootstrap user and role.</p>
 <p>The stack will create all the required AWS resources for you.  After the stack has finished, click 
 the <strong>Outputs</strong> tab, and make note of the <strong>FirewallManagementInterface</strong> IP address, and the 
 <strong>FirewallUntrustInterface</strong> IP address.  They will be used to access the management interface of 

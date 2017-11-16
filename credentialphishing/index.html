@@ -168,26 +168,26 @@ under <strong>Device &gt; Setup &gt; Services</strong>, select <strong>Service R
 the <em>trust</em> zone (ethernet1/2).</p>
 <p>Commit your changes.  After the commit completes, go back to the User-ID Agents tab.  The connected
 column will change from orange to green.</p>
-<p>Create a custom URL category for legitimate sites for which you want to allow corporate credential
-submissions.  Select <strong>Objects &gt; Custom Objects &gt; URL Category</strong> and add a custom URL category.
-In this example, "login-palo" URL category is created to identify traffic to site 
-"login.paloaltonetworks.com".  Now, add "login-palo" as a custom URL category as shown below.</p>
+<p><img alt="User-ID Agent 2" src="../img/uid_agent_2.png" /></p>
 <p>Select <strong>Objects &gt; Security Profiles &gt; URL Filtering</strong> and select the default URL Filtering profile.
-Clone it, and change the cloned profile name to "credential-phish-block".  I that new profile, go
-to the <strong>User Credential Detection</strong> tab.  Choose <strong>Use Domain Credential Filter</strong> for the User 
-Credential Detection method, and set the log severity to "high".</p>
-<p>Use the Categories tab to set all URL categories to block credential submissions.</p>
-<p>For our custom URL category (login-palo), allow credential submissions.</p>
+Clone it, and change the cloned profile name to "credential-phish-block".  Use the Categories tab 
+to set all URL categories to alert, but to block credential submissions.  </p>
+<p><img alt="Credential Phish Profile 1" src="../img/credential_phish_profile_1.png" /></p>
+<p>Now go to the <strong>User Credential Detection</strong> tab.  Choose <strong>Use Domain Credential Filter</strong> for the 
+User Credential Detection method, and set the log severity to "high".</p>
+<p><img alt="Credential Phish Profile 1" src="../img/credential_phish_profile_1.png" /></p>
 <p>Go to the <strong>Policies &gt; Security</strong> tab, and create a new security policy.  Associate your new URL
 filtering profile to the security policy with traffic from the GP zone to the PHISH zone.</p>
 <ul>
 <li><strong>Policy Name:</strong> Allow to Intranet</li>
 <li><strong>Source Zone:</strong> GP</li>
 <li><strong>Destination Zone:</strong> PHISH, TRUST</li>
+<li><strong>Application</strong>: any</li>
 <li><strong>Service:</strong> application-default</li>
 <li><strong>Action:</strong> allow</li>
 <li><strong>URL Profile:</strong> credential-phish-block</li>
 </ul>
+<p><img alt="Credential Phish Security Policy" src="../img/credential_phish_sec_policy.png" /></p>
 <p>Commit the configuration.</p>
 <hr />
 <h3 id="verification">Verification</h3>
@@ -197,8 +197,10 @@ SSO page.</p>
 <p>Upon clicking the link provided in the email, you will get a phishing page with a form to submit
 user credentials.</p>
 <p><strong>Note:</strong> If you are NOT connected via GlobalProtect to your lab environment, you will get an 
-"under construction" web page similar.  Do not proceed until you get the phishing page above.</p>
+"under construction" web page similar to below.  Do not proceed until you get the test phishing 
+page.</p>
 <p>Enter a username <strong>not</strong> in Table 2, and any password you'd like.  Click <strong>Login</strong>.</p>
+<p><img alt="Credential Theft Test 2" src="../img/credential_theft_test_2.png" /></p>
 <p>At this point, those credentials have been phished.  You will be redirected to a legitimate site.</p>
 <p>Now log in to your credential phishing campaign's admin web site.</p>
 <p>Next to the PANW campaign, click the View Results icon in the bottom right corner to get the 
