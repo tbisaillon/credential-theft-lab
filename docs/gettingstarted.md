@@ -41,6 +41,11 @@ contains the initial configuration for the firewall (located ``here`` for refere
 KeyName dropdown should be used to select the SSH key pair you want to log into the firewall 
 initially.
 
+![Create Stack](img/create_stack.png)
+
+Be sure to check the box "I acknowledge that AWS CloudFormation might create IAM resources" when 
+creating the stack to create the bootstrap user and role.
+
 The stack will create all the required AWS resources for you.  After the stack has finished, click 
 the **Outputs** tab, and make note of the **FirewallManagementInterface** IP address, and the 
 **FirewallUntrustInterface** IP address.  They will be used to access the management interface of 
