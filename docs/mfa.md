@@ -46,7 +46,9 @@ profile.
 ![Authentication](img/authentication.png)
 
 In the **Authentication** policy, create a rule to trigger the challenge for traffic destined for
-our web server.  You may want to set the timeout to a smaller value to make testing easier.
+our web server.  Set the timeout to a smaller value (1 minute) to make testing easier.
+
+![MFA Firewall 6](img/mfa_firewall_6.png)
 
   - **Policy Name:** Require MFA
   - **Source Zone:** GP
@@ -57,6 +59,8 @@ our web server.  You may want to set the timeout to a smaller value to make test
 
 Finally, create a **Security** policy allowing traffic to the web server.
 
+![MFA Firewall 7](img/mfa_firewall_7.png)
+
   - **Policy Name:** Lab MFA Test
   - **Source Zone:** GP
   - **Destination Zone:** TRUST
@@ -66,3 +70,46 @@ Finally, create a **Security** policy allowing traffic to the web server.
   - **Action:** allow
 
 Commit the configuration.
+
+### Verification
+
+On the menu of your GlobalProtect client, click **Rediscover Network** to make sure it has the
+latest configuration from the Portal.
+
+Open a browser and connect to [http://web1.credlab.local](http://web1.credlab.local).  When 
+directed to the captive portal page, accept the self-signed certificate warning prompt.
+
+Log in to the captive portal page using the username and password corresponding to the user that 
+you enrolled in Duo.  The first factor authentication will be done against the LDAP server.
+
+![MFA Test 1](img/mfa_test_1.png)
+
+Once the first factor has succeeded, the user is redirected to the second factor page.  In this 
+lab, a push notification is sent to the user's device for the second factor authentication.  
+On your device, either allow or deny the access.
+
+![MFA Test 2](img/mfa_test_2.png)
+
+On the firewall under **Monitor > Logs > Authentication**, you can view the authentication logs.
+Note the two authentications, one for LDAP and one for Duo.
+
+![MFA Test 3](img/mfa_test_3.png)  
+
+If you opted to approve the authentication using the Duo app, the authentication will succeed and 
+you will be redirected to the restricted site, which in our case is just the IIS default page.
+
+![MFA Test 4](img/mfa_test_4.png)
+
+You can also deliver authentication challenges for applications that are not web-based.  Open 
+Remote Desktop and attempt to connect to web1.credlab.local.  The initial connection will fail, but
+the GlobalProtect client will display a pop-up asking you to authenticate.  Click the link to open
+the captive portal page, and authenticate as before.
+
+![MFA Test 5](img/mfa_test_5.png)
+
+After authenticating, attempt the Remote Desktop connection again and you should be able to connect
+to the server.
+
+![MFA Test 6](img/mfa_test_6.png)
+
+You're done with this section of the lab.
