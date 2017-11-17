@@ -76,6 +76,11 @@ column will change from orange to green.
 
 ![User-ID Agent 2](img/uid_agent_2.png)
 
+To make sure our test URL is categorized the way we want it, create a custom URL category for the 
+URL **paloaito.sso.com**.  *(Note the misspelling!)*
+
+![Custom URL Category](img/custom_category.png)
+
 Select **Objects > Security Profiles > URL Filtering** and select the default URL Filtering profile.
 Clone it, and change the cloned profile name to "credential-phish-block".  Use the Categories tab 
 to set all URL categories to alert, but to block credential submissions.  
@@ -113,6 +118,8 @@ SSO page.
 Upon clicking the link provided in the email, you will get a phishing page with a form to submit
 user credentials.
 
+![Credential Theft Test 1](img/credential_phish_test_1.png)
+
 
 **Note:** If you are NOT connected via GlobalProtect to your lab environment, you will get an 
 "under construction" web page similar to below.  Do not proceed until you get the test phishing 
@@ -120,17 +127,23 @@ page.
 
 Enter a username **not** in Table 2, and any password you'd like.  Click **Login**.
 
-![Credential Theft Test 2](img/credential_theft_test_2.png)
+![Credential Theft Test 2](img/credential_phish_test_2.png)
 
 At this point, those credentials have been phished.  You will be redirected to a legitimate site.
 
+![Credential Theft Test 3](img/credential_phish_test_3.png)
+
 Now log in to your credential phishing campaign's admin web site.
+
+![Credential Theft Test 4](img/credential_phish_test_4.png)
 
 Next to the PANW campaign, click the View Results icon in the bottom right corner to get the 
 campaign details.  Scroll down to your username, click the triangle icon, and expand the details:
 
 Scroll down to the bottom "Submitted Data" section, and click the triangle icon next to "View 
 Details".  You will see the username and password you entered.
+
+![Credential Theft Test 5](img/credential_phish_test_5.png)
 
 The above steps you performed show how easy it is to steal user credentials.  Credential phishing
 is rampant.  It is easier than ever to phish a user for credentials.  This is especially true in
@@ -141,11 +154,15 @@ is.
 You will do a second test, but first, let's find out what usernames are defined on your firewall.
 Connect to your firewall via SSH, and run the `show user ip-user-mapping all` command.
 
+![Credential Theft Test 6](img/credential_phish_test_6.png)
+
 Confirm that your username is listed (it will be if you are connected to the lab environment via 
 GlobalProtect).  You may see additional IP/user mappings.
 
 Go back to your test phishing account, and open the phishing email.  By clicking the link provided
 in the email, you will get to the phishing page again.
+
+![Credential Theft Test 7](img/credential_phish_test_7.png)
 
 Try submitting true "corporate" credentials by submitting the credentials you are connected to 
 GlobalProtect with.
@@ -156,6 +173,8 @@ submission and the URL will be blocked.
 
 You will get this message:
 
+![Credential Theft Test 8](img/credential_phish_test_8.png)
+
 You can see more info about this process using these commands:
 
 * `show user user-id-agent state all`
@@ -164,5 +183,11 @@ You can see more info about this process using these commands:
 
 In the output of `show user user-id-agent state all`, look for the following:
 
+![Credential Theft Test 9](img/credential_phish_test_9.png)
+
 Now examine the firewall's URL filtering logs.  Locate the log that matches your username, and view
 the log details.  Look for the "credential detected" flag.
+
+![Credential Theft Test 10](img/credential_phish_test_10.png)
+
+You can close the browser tabs to Gmail and Gophish.  You're done with this section of the lab.
