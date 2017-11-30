@@ -119,18 +119,43 @@
                 <h1>Multi-Factor Authentication</h1>
 
 <h3 id="duo-setup">Duo Setup</h3>
-<ul>
-<li>Create account</li>
-<li>Register device</li>
-<li>Set up application</li>
-</ul>
+<p>We will be using Duo to demonstrate multi-factor authentication.  You will create a Duo account,
+and then enroll your personal phone in it to receive the authentication challenges.</p>
+<p>Go to <a href="https://signup.duo.com">signup.duo.com</a> and sign up for a free Duo Account.  Be sure to
+check the <strong>I'm an MSP, Reseller, or Partner</strong> box when signing up.</p>
+<p><img alt="Duo Setup 1" src="../img/duo_setup_1.png" /></p>
+<p>Complete the enrollment, then follow the instructions to download and install Duo Mobile.  You will
+need this to log into the Duo Administration portal, as well as the MFA steps later in the lab.</p>
+<p>On the Duo Adminstration Portal, click on <strong>Applications</strong>, then on <strong>Protect an Application</strong>.</p>
+<p><img alt="Duo Setup 2" src="../img/duo_setup_2.png" /></p>
+<p>Choose <strong>Palo Alto SSL VPN</strong> as the application you are protecting.  We're not using that
+application specifically, but the integration parameters are the same.</p>
+<p><img alt="Duo Setup 3" src="../img/duo_setup_3.png" /></p>
+<p>You will need the <strong>Integration Key</strong>, the <strong>Secret Key</strong>, and the <strong>API Hostname</strong> from this 
+section, so save them somewhere.  You can also change the name of the application that gets 
+displayed in the push notification to users by modifying the <strong>Name</strong> filed.  Scroll to the bottom
+and click <strong>Save Your Changes</strong>.</p>
+<p><img alt="Duo Setup 4" src="../img/duo_setup_4.png" /></p>
+<p>Now click on <strong>Users</strong>, then on <strong>Add User</strong>.</p>
+<p><img alt="Duo Setup 5" src="../img/duo_setup_5.png" /></p>
+<p>The username here <strong>must</strong> match who you are authenticating as (user1, user2, user3).  Enter a 
+username, then click <strong>Add User</strong>.</p>
+<p><img alt="Duo Setup 6" src="../img/duo_setup_6.png" /></p>
+<p>Scroll down on this next screen and click on <strong>Add Phone</strong>.   Add your phone number.</p>
+<p><img alt="Duo Setup 7" src="../img/duo_setup_7.png" /></p>
+<p>On the next screen, under the <strong>Device Info</strong> section, click <strong>Activate Duo Mobile</strong>.  Duo will 
+generate activation codes for the Duo Mobile application for you, and then offer to send them via 
+SMS.</p>
+<p><img alt="Duo Setup 8" src="../img/duo_setup_8.png" /></p>
+<p>Send the instructions to your phone and complete enrollment.</p>
 <h3 id="firewall-configuration">Firewall Configuration</h3>
 <p>In the <strong>Device</strong> tab, add a Multi Factor Authentication server profile:</p>
 <ul>
 <li><strong>Profile Name</strong>: DUO_MFA</li>
 <li><strong>Certificate Profile</strong>: Duo-Cert-Profile (certificates have been imported for you already)</li>
 <li><strong>MFA Vendor</strong>: Duo v2</li>
-<li><strong>API Host</strong>, <strong>Integration Key</strong>, and <strong>Secret Key</strong> are specific to your Duo account.</li>
+<li><strong>API Host</strong>, <strong>Integration Key</strong>, and <strong>Secret Key</strong> are what you recorded from earlier.
+    <em>They're in a different order here, so be sure you're copying and pasting correctly!</em></li>
 </ul>
 <p><img alt="Multi Factor Server Profile" src="../img/mfa_server_profile.png" /></p>
 <p>Add a new <strong>Authentication Profile</strong> by cloning the existing LDAP_Auth profile.  Call it 
