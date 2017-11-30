@@ -90,7 +90,7 @@ to set all URL categories to alert, but to block credential submissions.
 Now go to the **User Credential Detection** tab.  Choose **Use Domain Credential Filter** for the 
 User Credential Detection method, and set the log severity to "high".
 
-![Credential Phish Profile 1](img/credential_phish_profile_1.png)
+![Credential Phish Profile 2](img/credential_phish_profile_2.png)
 
 Go to the **Policies > Security** tab, and create a new security policy.  Associate your new URL
 filtering profile to the security policy with traffic from the GP zone to the PHISH zone.
