@@ -178,9 +178,11 @@ interface is wide open and should need no modifications.</p>
 to log in as the admin user and set the admin password.</p>
 <h2 id="generate-globalprotect-portal-certificate">Generate GlobalProtect Portal Certificate</h2>
 <p>The bootstrap configuration for the firewall contains a certificate authority for you, but you need 
-to create a certificate for the IP address of the firewall's untrust interface.</p>
+to create a certificate for the IP address of the firewall's untrust interface.  Go to <strong>Device &gt; 
+Certificate Management &gt; Certificates</strong> and create one similar to the following.</p>
 <p><img alt="Replace Cert 1" src="../img/generate_cert_1.png" /></p>
-<p>Use it in place of <strong>Placeholder-Cert</strong> in the <strong>GlobalProtect_SSL</strong> service profile.</p>
+<p>Go to <strong>Device &gt; Certificate Management &gt; SSL/TLS Service Profile</strong> and use the certificate you just
+created in place of <strong>Placeholder-Cert</strong> in the <strong>GlobalProtect_SSL</strong> service profile.</p>
 <p><img alt="Replace Cert 2" src="../img/generate_cert_2.png" /></p>
 <h2 id="replace-external-gateway-in-globalprotect-portal-config">Replace External Gateway in GlobalProtect Portal Config</h2>
 <p>In the Agent config section of the GlobalProtect portal configuration, navigate to the <strong>External</strong>
@@ -190,8 +192,8 @@ tab, and replace the external gateway IP address with your firewall's untrust in
 <p>If you don't have GlobalProtect installed on your laptop, download and activate the latest version 
 on the firewall so you can download it when connecting to the GlobalProtect portal.</p>
 <h2 id="create-phishing-victim-account">Create Phishing Victim Account</h2>
-<p>We will be sending a phishing email as part of this lab.  You can either use your personal Gmail 
-account, or create a new one for this lab.</p>
+<p>We will be sending a phishing email as part of this lab.  You can either use a personal Gmail 
+account, or you can create a new one for this lab if you wish.</p>
               
             </div>
           </div>

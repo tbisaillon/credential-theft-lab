@@ -132,10 +132,13 @@ Credential Filter</strong> method.</p>
 <h1>Configuration Steps</h1>
 
 <h3 id="phishing-campaign-configuration">Phishing Campaign Configuration</h3>
-<p>From your laptop, open the GlobalProtect Agent.  If you don't have it installed, install it when 
-prompted by the portal.  Connect to your lab environment's GlobalProtect portal using any of the 
-user accounts listed in Table 2.</p>
-<p>Access your phishing campaign admin site with the credentials <strong>admin/gophish</strong>.</p>
+<p>From your laptop, open the GlobalProtect Agent and connect to the GP Portal running on the untrust 
+interface of your firewall.  If you don't have it installed, install it when prompted by the portal.<br />
+Connect to your lab environment's GlobalProtect portal using any of the <strong>user accounts</strong> listed in 
+Table 2.  Do <strong>not</strong> use the Administrator account to connect, because it is not in the group 
+replicating its passwords to the RODC, and the phishing protection will not work.</p>
+<p>Once connected to your lab network via GP, access your phishing campaign admin site by connecting 
+to <a href="https://10.0.2.10">https://10.0.2.10</a> in a browser with the credentials <strong>admin/gophish</strong>.</p>
 <p><img alt="Phishing Campaign 1" src="../img/phishing_campaign_1.png" /></p>
 <p>In the <strong>Users &amp; Groups</strong> tab, edit the <strong>Phishing Recipients</strong> </p>
 <p><img alt="Phishing Campaign 2" src="../img/phishing_campaign_2.png" /></p>
@@ -169,6 +172,9 @@ the <em>trust</em> zone (ethernet1/2).</p>
 <p>Commit your changes.  After the commit completes, go back to the User-ID Agents tab.  The connected
 column will change from orange to green.</p>
 <p><img alt="User-ID Agent 2" src="../img/uid_agent_2.png" /></p>
+<p><em>If the connected column doesn't change to green, you may need to manually restart the service.
+Connect to the RODC over RDP using the Administrator account, and make sure the User-ID Agent 
+service is started in <strong>Start &gt; Administrative Tools &gt; Services</strong>.</em></p>
 <p>To make sure our test URL is categorized the way we want it, create a custom URL category for the 
 URL <strong>paloaito.sso.com</strong>.  <em>(Note the misspelling!)</em></p>
 <p><img alt="Custom URL Category" src="../img/custom_category.png" /></p>
@@ -201,8 +207,8 @@ SSO page.</p>
 user credentials.</p>
 <p><img alt="Credential Theft Test 1" src="../img/credential_phish_test_1.png" /></p>
 <p><strong>Note:</strong> If you are NOT connected via GlobalProtect to your lab environment, you will get an 
-"under construction" web page similar to below.  Do not proceed until you get the test phishing 
-page.</p>
+"under construction" web page.  You may have also mistyped the phishing URL in the GoPhish campaign 
+config.  Do not proceed until you get the test phishing page as shown.</p>
 <p>Enter a username <strong>not</strong> in Table 2, and any password you'd like.  Click <strong>Login</strong>.</p>
 <p><img alt="Credential Theft Test 2" src="../img/credential_phish_test_2.png" /></p>
 <p>At this point, those credentials have been phished.  You will be redirected to a legitimate site.</p>
@@ -223,7 +229,8 @@ is.</p>
 Connect to your firewall via SSH, and run the <code>show user ip-user-mapping all</code> command.</p>
 <p><img alt="Credential Theft Test 6" src="../img/credential_phish_test_6.png" /></p>
 <p>Confirm that your username is listed (it will be if you are connected to the lab environment via 
-GlobalProtect).  You may see additional IP/user mappings.</p>
+GlobalProtect).  <em>Again, you should <strong>not</strong> be using the Administrator account to connect as.</em>  You 
+may see additional IP/user mappings.</p>
 <p>Go back to your test phishing account, and open the phishing email.  By clicking the link provided
 in the email, you will get to the phishing page again.</p>
 <p><img alt="Credential Theft Test 7" src="../img/credential_phish_test_7.png" /></p>
@@ -242,8 +249,8 @@ submission and the URL will be blocked.</p>
 </ul>
 <p>In the output of <code>show user user-id-agent state all</code>, look for the following:</p>
 <p><img alt="Credential Theft Test 9" src="../img/credential_phish_test_9.png" /></p>
-<p>Now examine the firewall's URL filtering logs.  Locate the log that matches your username, and view
-the log details.  Look for the "credential detected" flag.</p>
+<p>Now examine the firewall's URL filtering logs.  Locate the log that matches your username with the
+action <strong>block-url</strong>, and view the log details.  Look for the <strong>credential detected</strong> flag.</p>
 <p><img alt="Credential Theft Test 10" src="../img/credential_phish_test_10.png" /></p>
 <p>You can close the browser tabs to Gmail and Gophish.  You're done with this section of the lab.</p>
               
