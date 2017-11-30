@@ -147,7 +147,7 @@ Details".  You will see the username and password you entered.
 
 The above steps you performed show how easy it is to steal user credentials.  Credential phishing
 is rampant.  It is easier than ever to phish a user for credentials.  This is especially true in
-targetted attacks, where the attacker wants to get into a specific organaization.  A phishing attack
+targeted attacks, where the attacker wants to get into a specific organization.  A phishing attack
 makes password complexity irrelevant; the attacker steals the password no matter how difficult it
 is.
 
@@ -179,7 +179,7 @@ You can see more info about this process using these commands:
 
 * `show user user-id-agent state all`
 * `less mp-log useridd.log` - You can find detailed logs in useridd.log.  This log now includes 
-  credential related logs, as well as bloomfilter updates.
+  credential related logs, as well as bloom filter updates.
 
 In the output of `show user user-id-agent state all`, look for the following:
 
