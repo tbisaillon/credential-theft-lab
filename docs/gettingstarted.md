@@ -72,11 +72,13 @@ to log in as the admin user and set the admin password.
 ## Generate GlobalProtect Portal Certificate
 
 The bootstrap configuration for the firewall contains a certificate authority for you, but you need 
-to create a certificate for the IP address of the firewall's untrust interface.
+to create a certificate for the IP address of the firewall's untrust interface.  Go to **Device > 
+Certificate Management > Certificates** and create one similar to the following.
 
 ![Replace Cert 1](img/generate_cert_1.png)
 
-Use it in place of **Placeholder-Cert** in the **GlobalProtect_SSL** service profile.
+Go to **Device > Certificate Management > SSL/TLS Service Profile** and use the certificate you just
+created in place of **Placeholder-Cert** in the **GlobalProtect_SSL** service profile.
 
 ![Replace Cert 2](img/generate_cert_2.png)
 
