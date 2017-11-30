@@ -102,17 +102,8 @@ our web server.  Set the timeout to a smaller value (1 minute) to make testing e
   - **Service:** service-http, service-rdp
   - **Authentication Enforcement:** Duo-Authentication
 
-Finally, create a **Security** policy allowing traffic to the web server.
-
-![MFA Firewall 7](img/mfa_firewall_7.png)
-
-  - **Policy Name:** Lab MFA Test
-  - **Source Zone:** GP
-  - **Destination Zone:** TRUST
-  - **Destination Address:** 10.0.1.12
-  - **Application:** web-browsing, ms-rdp
-  - **Service:** application-default
-  - **Action:** allow
+The security policy **Allow to Intranet** already allows traffic to this destination, so no changes
+are required to it.
 
 Commit the configuration.
 
