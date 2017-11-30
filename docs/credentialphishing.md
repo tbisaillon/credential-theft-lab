@@ -189,8 +189,8 @@ In the output of `show user user-id-agent state all`, look for the following:
 
 ![Credential Theft Test 9](img/credential_phish_test_9.png)
 
-Now examine the firewall's URL filtering logs.  Locate the log that matches your username, and view
-the log details.  Look for the "credential detected" flag.
+Now examine the firewall's URL filtering logs.  Locate the log that matches your username with the
+action **block-url**, and view the log details.  Look for the **credential detected** flag.
 
 ![Credential Theft Test 10](img/credential_phish_test_10.png)
 
