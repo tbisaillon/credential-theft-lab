@@ -18,9 +18,11 @@ Credential Filter** method.
 
 ### Phishing Campaign Configuration
 
-From your laptop, open the GlobalProtect Agent.  If you don't have it installed, install it when 
-prompted by the portal.  Connect to your lab environment's GlobalProtect portal using any of the 
-user accounts listed in Table 2.
+From your laptop, open the GlobalProtect Agent and connect to the GP Portal running on the untrust 
+interface of your firewall.  If you don't have it installed, install it when prompted by the portal.  
+Connect to your lab environment's GlobalProtect portal using any of the **user accounts** listed in 
+Table 2.  Do **not** use the Administrator account to connect, because it is not in the group 
+replicating its passwords to the RODC, and the phishing protection will not work.
 
 Access your phishing campaign admin site with the credentials **admin/gophish**.
 
@@ -161,7 +163,8 @@ Connect to your firewall via SSH, and run the `show user ip-user-mapping all` co
 ![Credential Theft Test 6](img/credential_phish_test_6.png)
 
 Confirm that your username is listed (it will be if you are connected to the lab environment via 
-GlobalProtect).  You may see additional IP/user mappings.
+GlobalProtect).  *Again, you should **not** be using the Administrator account to connect as.*  You 
+may see additional IP/user mappings.
 
 Go back to your test phishing account, and open the phishing email.  By clicking the link provided
 in the email, you will get to the phishing page again.

@@ -36,9 +36,9 @@ Phishing Site (Kali Linux)  | 10.0.2.10               | kali          | paloalto
 
 ***Table 2* - Corporate Active Directory Accounts - Credlab.local**
 
-Username      | Password
-------------- | --------
-Administrator | paloalto
-user1         | paloalto
-user2         | paloalto
-user3         | paloalto
+Username      | Password | Notes
+------------- | -------- | -----
+Administrator | paloalto | *For lab maintenance only, use user accounts for testing*
+user1         | paloalto |
+user2         | paloalto |
+user3         | paloalto |
