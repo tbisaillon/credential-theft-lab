@@ -153,7 +153,7 @@ sent to your test user.</p>
 <p><img alt="Phishing Campaign 7" src="../img/phishing_campaign_7.png" /></p>
 <hr />
 <h3 id="firewall-configuration">Firewall Configuration</h3>
-<p>Log in to the GUI of your firewall, and add a User-ID agent.</p>
+<p>Log in to the GUI of your firewall via the public management IP, and add a User-ID agent.</p>
 <ul>
 <li><strong>Name:</strong> RODC</li>
 <li><strong>Host:</strong> 10.0.1.11</li>
@@ -178,7 +178,7 @@ to set all URL categories to alert, but to block credential submissions.  </p>
 <p><img alt="Credential Phish Profile 1" src="../img/credential_phish_profile_1.png" /></p>
 <p>Now go to the <strong>User Credential Detection</strong> tab.  Choose <strong>Use Domain Credential Filter</strong> for the 
 User Credential Detection method, and set the log severity to "high".</p>
-<p><img alt="Credential Phish Profile 1" src="../img/credential_phish_profile_1.png" /></p>
+<p><img alt="Credential Phish Profile 2" src="../img/credential_phish_profile_2.png" /></p>
 <p>Go to the <strong>Policies &gt; Security</strong> tab, and create a new security policy.  Associate your new URL
 filtering profile to the security policy with traffic from the GP zone to the PHISH zone.</p>
 <ul>
@@ -216,7 +216,7 @@ Details".  You will see the username and password you entered.</p>
 <p><img alt="Credential Theft Test 5" src="../img/credential_phish_test_5.png" /></p>
 <p>The above steps you performed show how easy it is to steal user credentials.  Credential phishing
 is rampant.  It is easier than ever to phish a user for credentials.  This is especially true in
-targetted attacks, where the attacker wants to get into a specific organaization.  A phishing attack
+targeted attacks, where the attacker wants to get into a specific organization.  A phishing attack
 makes password complexity irrelevant; the attacker steals the password no matter how difficult it
 is.</p>
 <p>You will do a second test, but first, let's find out what usernames are defined on your firewall.
@@ -238,7 +238,7 @@ submission and the URL will be blocked.</p>
 <ul>
 <li><code>show user user-id-agent state all</code></li>
 <li><code>less mp-log useridd.log</code> - You can find detailed logs in useridd.log.  This log now includes 
-  credential related logs, as well as bloomfilter updates.</li>
+  credential related logs, as well as bloom filter updates.</li>
 </ul>
 <p>In the output of <code>show user user-id-agent state all</code>, look for the following:</p>
 <p><img alt="Credential Theft Test 9" src="../img/credential_phish_test_9.png" /></p>

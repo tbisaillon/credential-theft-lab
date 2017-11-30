@@ -189,17 +189,8 @@ our web server.  Set the timeout to a smaller value (1 minute) to make testing e
 <li><strong>Service:</strong> service-http, service-rdp</li>
 <li><strong>Authentication Enforcement:</strong> Duo-Authentication</li>
 </ul>
-<p>Finally, create a <strong>Security</strong> policy allowing traffic to the web server.</p>
-<p><img alt="MFA Firewall 7" src="../img/mfa_firewall_7.png" /></p>
-<ul>
-<li><strong>Policy Name:</strong> Lab MFA Test</li>
-<li><strong>Source Zone:</strong> GP</li>
-<li><strong>Destination Zone:</strong> TRUST</li>
-<li><strong>Destination Address:</strong> 10.0.1.12</li>
-<li><strong>Application:</strong> web-browsing, ms-rdp</li>
-<li><strong>Service:</strong> application-default</li>
-<li><strong>Action:</strong> allow</li>
-</ul>
+<p>The security policy <strong>Allow to Intranet</strong> already allows traffic to this destination, so no changes
+are required to it.</p>
 <p>Commit the configuration.</p>
 <h3 id="verification">Verification</h3>
 <p>On the menu of your GlobalProtect client, click <strong>Rediscover Network</strong> to make sure it has the
