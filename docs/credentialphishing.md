@@ -76,6 +76,10 @@ column will change from orange to green.
 
 ![User-ID Agent 2](img/uid_agent_2.png)
 
+*If the connected column doesn't change to green, you may need to manually restart the service.
+Connect to the RODC over RDP using the Administrator account, and make sure the User-ID Agent 
+service is started in **Start > Administrative Tools > Services**.*
+
 To make sure our test URL is categorized the way we want it, create a custom URL category for the 
 URL **paloaito.sso.com**.  *(Note the misspelling!)*
 
