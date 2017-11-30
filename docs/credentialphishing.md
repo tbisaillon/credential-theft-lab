@@ -24,7 +24,8 @@ Connect to your lab environment's GlobalProtect portal using any of the **user a
 Table 2.  Do **not** use the Administrator account to connect, because it is not in the group 
 replicating its passwords to the RODC, and the phishing protection will not work.
 
-Access your phishing campaign admin site with the credentials **admin/gophish**.
+Once connected to your lab network via GP, access your phishing campaign admin site by connecting 
+to [https://10.0.2.10](https://10.0.2.10) in a browser with the credentials **admin/gophish**.
 
 ![Phishing Campaign 1](img/phishing_campaign_1.png)
 
