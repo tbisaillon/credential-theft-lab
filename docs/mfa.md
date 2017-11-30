@@ -2,9 +2,53 @@
 
 ### Duo Setup
 
-- Create account
-- Register device
-- Set up application
+We will be using Duo to demonstrate multi-factor authentication.  You will create a Duo account,
+and then enroll your personal phone in it to receive the authentication challenges.
+
+Go to [signup.duo.com](https://signup.duo.com) and sign up for a free Duo Account.  Be sure to
+check the **I'm an MSP, Reseller, or Partner** box when signing up.
+
+![Duo Setup 1](img/duo_setup_1.png)
+
+Complete the enrollment, then follow the instructions to download and install Duo Mobile.  You will
+need this to log into the Duo Administration portal, as well as the MFA steps later in the lab.
+
+On the Duo Adminstration Portal, click on **Applications**, then on **Protect an Application**.
+
+![Duo Setup 2](img/duo_setup_2.png)
+
+Choose **Palo Alto SSL VPN** as the application you are protecting.  We're not using that
+application specifically, but the integration parameters are the same.
+
+![Duo Setup 3](img/duo_setup_3.png)
+
+You will need the **Integration Key**, the **Secret Key**, and the **API Hostname** from this 
+section, so save them somewhere.  You can also change the name of the application that gets 
+displayed in the push notification to users by modifying the **Name** filed.  Scroll to the bottom
+and click **Save Your Changes**.
+
+![Duo Setup 4](img/duo_setup_4.png)
+
+Now click on **Users**, then on **Add User**.
+
+![Duo Setup 5](img/duo_setup_5.png)
+
+The username here **must** match who you are authenticating as (user1, user2, user3).  Enter a 
+username, then click **Add User**.
+
+![Duo Setup 6](img/duo_setup_6.png)
+
+Scroll down on this next screen and click on **Add Phone**.   Add your phone number.
+
+![Duo Setup 7](img/duo_setup_7.png)
+
+On the next screen, under the **Device Info** section, click **Activate Duo Mobile**.  Duo will 
+generate activation codes for the Duo Mobile application for you, and then offer to send them via 
+SMS.
+
+![Duo Setup 8](img/duo_setup_8.png)
+
+Send the instructions to your phone and complete enrollment.
 
 ### Firewall Configuration
 
@@ -13,7 +57,8 @@ In the **Device** tab, add a Multi Factor Authentication server profile:
   - **Profile Name**: DUO_MFA
   - **Certificate Profile**: Duo-Cert-Profile (certificates have been imported for you already)
   - **MFA Vendor**: Duo v2
-  - **API Host**, **Integration Key**, and **Secret Key** are specific to your Duo account.
+  - **API Host**, **Integration Key**, and **Secret Key** are what you recorded from earlier.
+    *They're in a different order here, so be sure you're copying and pasting correctly!*
 
 ![Multi Factor Server Profile](img/mfa_server_profile.png)
 
