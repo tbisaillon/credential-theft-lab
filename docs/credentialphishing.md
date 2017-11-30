@@ -127,10 +127,9 @@ user credentials.
 
 ![Credential Theft Test 1](img/credential_phish_test_1.png)
 
-
 **Note:** If you are NOT connected via GlobalProtect to your lab environment, you will get an 
-"under construction" web page similar to below.  Do not proceed until you get the test phishing 
-page.
+"under construction" web page.  You may have also mistyped the phishing URL in the GoPhish campaign 
+config.  Do not proceed until you get the test phishing page as shown.
 
 Enter a username **not** in Table 2, and any password you'd like.  Click **Login**.
 
