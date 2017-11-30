@@ -96,5 +96,5 @@ on the firewall so you can download it when connecting to the GlobalProtect port
 
 ## Create Phishing Victim Account
 
-We will be sending a phishing email as part of this lab.  You can either use your personal Gmail 
-account, or create a new one for this lab.
+We will be sending a phishing email as part of this lab.  You can either use a personal Gmail 
+account, or you can create a new one for this lab if you wish.
