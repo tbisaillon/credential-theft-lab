@@ -1,5 +1,9 @@
 <h1>Getting Started</h1>
 
+## Region Selection
+
+**For the moment, the template supports the US-East-1 region only.**
+
 ## EC2 Key Pair Creation
 
 If you've never used AWS before, you will need to create a SSH key pair that 
